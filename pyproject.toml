@@ -1,0 +1,23 @@
+[tool.basedpyright]
+typeCheckingMode = "standard"
+
+defineConstant = { DEBUG = false }
+exclude = ["**/__pycache__", "**/node_modules", "build", "dist", "venv"]
+
+ignore = []
+include = ["."]
+
+reportMissingImports = "error"
+reportMissingTypeStubs = false
+
+enableTypeIgnoreComments = true
+
+reportArgumentType = "none"
+reportCallIssue = "none"
+reportOptionalMemberAccess = "none"
+reportOptionalSubscript = "none"
+
+pythonPlatform = "Linux"
+pythonVersion = "3.12"
+
+executionEnvironments = [{ root = "." }]
