@@ -12,34 +12,49 @@
 
 ## ⚠️ Disclaimer
 
-This repository is provided for **educational purposes only**. The author(s) of this repository do not endorse or support the use of this software for any illegal or unethical activities.
+This repository is provided for **educational purposes only**. The author(s) of this repository do not endorse or
+support the use of this software for any illegal or unethical activities.
 
 **By using this repository, you acknowledge that:**
 
-- The software is provided "AS IS", without any guarantees or warranties. There is no assurance that the software will work as intended in all situations, nor that it will be suitable for your particular needs.
-- The author(s) are not responsible for any misuse, damages, or legal issues that may arise from the use of this software. This includes, but is not limited to, any damage to systems, data loss, or legal consequences resulting from the use of this code.
-- Any consequences, whether intended or unintended, of using this software, are solely your responsibility. You agree to use the software at your own risk.
-- The software is intended for learning and research purposes. Any other use, especially in ways that violate the terms of service of websites or applicable laws, is strongly discouraged.
+- The software is provided "AS IS", without any guarantees or warranties. There is no assurance that the software will
+  work as intended in all situations, nor that it will be suitable for your particular needs.
+- The author(s) are not responsible for any misuse, damages, or legal issues that may arise from the use of this
+  software. This includes, but is not limited to, any damage to systems, data loss, or legal consequences resulting
+  from the use of this code.
+- Any consequences, whether intended or unintended, of using this software, are solely your responsibility.
+  You agree to use the software at your own risk.
+- The software is intended for learning and research purposes. Any other use, especially in ways that violate the terms
+  of service of websites or applicable laws, is strongly discouraged.
 
 ----------
 
 ## ⚠️ Отказ от ответственности
 
-Этот репозиторий предоставлен **исключительно в образовательных целях**. Автор(ы) данного репозитория не одобряют и не поддерживают использование данного программного обеспечения для каких-либо незаконных или неэтичных действий.
+Этот репозиторий предоставлен **исключительно в образовательных целях**. Автор(ы) данного репозитория не одобряют и не
+поддерживают использование данного программного обеспечения для каких-либо незаконных или неэтичных действий.
 
 **Используя этот репозиторий, вы подтверждаете, что:**
 
-- Программное обеспечение предоставляется "КАК ЕСТЬ", без каких-либо гарантий или заверений. Нет никаких гарантий, что программа будет работать, как задумано, во всех случаях, или что она подходит для ваших конкретных нужд.
-- Автор(ы) не несут ответственности за какое-либо неправильное использование, ущерб или правовые последствия, которые могут возникнуть в результате использования этого программного обеспечения. Это включает, но не ограничивается, повреждением систем, потерей данных или юридическими последствиями, возникающими в результате использования этого кода.
-- Любые последствия, будь то преднамеренные или непреднамеренные, от использования этого программного обеспечения, являются исключительно вашей ответственностью. Вы соглашаетесь использовать это программное обеспечение на свой страх и риск.
-- Программное обеспечение предназначено для обучения и исследований. Любое другое использование, особенно способы, нарушающие условия обслуживания веб-сайтов или действующее законодательство, строго не рекомендуется.
+- Программное обеспечение предоставляется "КАК ЕСТЬ", без каких-либо гарантий или заверений. Нет никаких гарантий,
+  что программа будет работать, как задумано, во всех случаях, или что она подходит для ваших конкретных нужд.
+- Автор(ы) не несут ответственности за какое-либо неправильное использование, ущерб или правовые последствия,
+  которые могут возникнуть в результате использования этого программного обеспечения. Это включает, но не
+  ограничивается, повреждением систем, потерей данных или юридическими последствиями, возникающими в результате
+  использования этого кода.
+- Любые последствия, будь то преднамеренные или непреднамеренные, от использования этого программного обеспечения,
+  являются исключительно вашей ответственностью. Вы соглашаетесь использовать это программное обеспечение на свой страх
+  и риск.
+- Программное обеспечение предназначено для обучения и исследований. Любое другое использование, особенно способы,
+  нарушающие условия обслуживания веб-сайтов или действующее законодательство, строго не рекомендуется.
 
 ----------
 
 ## ✨ Features / Особенности
 
 - A distinctive feature is segmentation using OpenCV before character recognition.
-- Отличительной особенностью является наличие сегментации при помощи компьютерного зрения перед распознаванием нейронной сетью.
+- Отличительной особенностью является наличие сегментации при помощи компьютерного зрения перед распознаванием
+  нейронной сетью.
 
 > debug image of segmentation process using -d/--debug argument
 ![Demo of the segmentation process](assets/demo.png)
@@ -80,15 +95,18 @@ python main.py -l -i
     vk-new-captcha-solver-* -l "path/to/model" -i
     ```
 
-> The server accepts requests for **base64** images in text/plain format. Just send captcha as **base64** using POST request
+> The server accepts requests for **base64** images in text/plain format. Just send captcha as **base64**
+> using POST request
 > to the running server and get a response in text/plain format.
 >
 > Сервер принимает запросы **base64** изображения капчи в формате text/plain. Просто отправьте **base64** капчу в виде
 > POST-запроса на запущенный сервер и получите ответ также в формате text/plain.
 >
-> ⚠️ Do not use the image from the src attribute of the `<img>` tag, as it will be **different** from the displayed captcha. To get the actual image, use the script below
+> ⚠️ Do not use the image from the src attribute of the `<img>` tag, as it will be **different** from the displayed
+> captcha. To get the actual image, use the script below
 >
-> ⚠️ Не используйте изображение из атрибута src тэга `<img>`, т.к. оно **будет отличаться** от отображаемой капчи. Для того, чтобы получить актуальное изображение, используйте скрипт ниже
+> ⚠️ Не используйте изображение из атрибута src тэга `<img>`, т.к. оно **будет отличаться** от отображаемой капчи.
+> Для того, чтобы получить актуальное изображение, используйте скрипт ниже
 
 ```javascript
 const captchaImg = document.querySelector(".box_layout").querySelector("img");
@@ -104,9 +122,11 @@ const captchaBase64 = canvas.toDataURL("image/png");
 // Now you can send captchaBase64 to the server to solve it
 ```
 
-> ⚠️ You can find implementation example in `removeLikes.js`. The script is designed to remove **all** likes under posts / comments.
+> ⚠️ You can find implementation example in `removeLikes.js`. The script is designed to remove **all** likes under
+> posts / comments.
 >
-> ⚠️ Пример реализации в файле `removeLikes.js`. Скрипт предназначен для удаления **всех** лайков под постами / комментариями.
+> ⚠️ Пример реализации в файле `removeLikes.js`. Скрипт предназначен для удаления **всех** лайков под
+> постами / комментариями.
 
 ```text
 usage: vk-new-captcha-solver [-h] (-t [DATASET_FILES_PATTERN] | -l [MODEL_DIR]) [-s [MODEL_DIR]] [-f IMAGE_FILE_PATH]
@@ -159,6 +179,6 @@ examples:
 - На 21 июня 2025г tensorflow не поддерживает Python версий выше 1.12: <https://www.tensorflow.org/install/pip>
 
 - Size of captcha must be exactly 400x153 px. If your captcha has a different size you need to collect dataset and
-  re-train model
+  re-train model. Dataset structure must be the same as in the `dataset/` directory
 - Размер капчи должен быть строго 400x153 пикселей. Если размер вашей капчи отличается, вам необходимо собрать новый
-  датасет и натренировать модель самостоятельно
+  датасет и натренировать модель самостоятельно. Структура датасета должна быть такой же как в директории `dataset/`
