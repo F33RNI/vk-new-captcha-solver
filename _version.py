@@ -25,4 +25,4 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <https://unlicense.org>
 """
 
-__version__ = "1.0.dev"
+__version__ = "1.0.dev1"
