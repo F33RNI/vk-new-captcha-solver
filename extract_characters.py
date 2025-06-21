@@ -32,6 +32,8 @@ import numpy as np
 from cv2.typing import MatLike
 
 PARAMS_DEFAULT: dict[str, int] = {
+    "resize_w": 400,
+    "resize_h": 153,
     "no_background_mask_blur_kernel_x": 3,
     "no_background_mask_blur_kernel_y": 3,
     "no_background_mask_threshold": 180,
@@ -40,7 +42,7 @@ PARAMS_DEFAULT: dict[str, int] = {
     "floodfill_threshold": 39,
     "group_threshold": 2,
     "min_character_width": 34,
-    "max_character_width": 110,
+    "max_character_width": 105,
     "min_character_height": 34,
     "max_character_height": 110,
     "min_pixel_density": 12,
@@ -85,6 +87,15 @@ def extract_characters(
 
     image_w = image.shape[1]
     image_h = image.shape[0]
+
+    # Resize image (NOTE: this it not a fix for wrong size! Just a temporary solution!)
+    if image_w != params["resize_w"] or image_h != params["resize_h"]:
+        image_w_ = params["resize_w"]
+        image_h_ = params["resize_h"]
+        logging.warning(f"Resizing image {image_w}x{image_h} -> {image_w_}x{image_h_}")
+        image = cv2.resize(image, (image_w_, image_h_))
+        image_w = image_w_
+        image_h = image_h_
 
     # Check output size
     if output_width is not None and output_width > image_w:

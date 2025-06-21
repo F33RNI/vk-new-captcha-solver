@@ -62,6 +62,9 @@ venv\Scripts\activate.bat
 
 pip install -r requirements.txt
 
+# NOTE: Please install 'tensorflow[and-cuda]' INSTEAD OF tensorflow if you have CUDA
+# pip uninstall tensorflow && pip install 'tensorflow[and-cuda]'
+
 python main.py --help
 python main.py -l -i
 ```
@@ -131,13 +134,13 @@ options:
   -p KEY=VALUE [KEY=VALUE ...], --params KEY=VALUE [KEY=VALUE ...]
                         parameters for segmentation and training as key=value pairs (Ex.: -e training_epochs=50) NOTE:
                         All values are always treated as integers Available keys: training_epochs (Default: 20),
-                        no_background_mask_blur_kernel_x (Default: 3), no_background_mask_blur_kernel_y (Default: 3),
-                        no_background_mask_threshold (Default: 180), no_background_mask_erode_kernel_x (Default: 3),
-                        no_background_mask_erode_kernel_y (Default: 2), floodfill_threshold (Default: 39),
-                        group_threshold (Default: 2), min_character_width (Default: 34), max_character_width (Default:
-                        110), min_character_height (Default: 34), max_character_height (Default: 110),
-                        min_pixel_density (Default: 12), rects_group_threshold (Default: 2), rects_group_eps (Default:
-                        45)
+                        resize_w (Default: 400), resize_h (Default: 153), no_background_mask_blur_kernel_x (Default:
+                        3), no_background_mask_blur_kernel_y (Default: 3), no_background_mask_threshold (Default:
+                        180), no_background_mask_erode_kernel_x (Default: 3), no_background_mask_erode_kernel_y
+                        (Default: 2), floodfill_threshold (Default: 39), group_threshold (Default: 2),
+                        min_character_width (Default: 34), max_character_width (Default: 105), min_character_height
+                        (Default: 34), max_character_height (Default: 110), min_pixel_density (Default: 12),
+                        rects_group_threshold (Default: 2), rects_group_eps (Default: 45)
   -d, --debug           show debug images of segmentation
   -v, --version         show program's version number and exit
 
@@ -148,6 +151,14 @@ examples:
   or simply:
   vk-new-captcha-solver -l -o "./solved" -i "localhost:5000"
   vk-new-captcha-solver -l -i
-
-
 ```
+
+### ⚠️ Notes / Примечания
+
+- For 21.06.2025 tensorflow only supports Python <= 1.12: <https://www.tensorflow.org/install/pip>
+- На 21 июня 2025г tensorflow не поддерживает Python версий выше 1.12: <https://www.tensorflow.org/install/pip>
+
+- Size of captcha must be exactly 400x153 px. If your captcha has a different size you need to collect dataset and
+  re-train model
+- Размер капчи должен быть строго 400x153 пикселей. Если размер вашей капчи отличается, вам необходимо собрать новый
+  датасет и натренировать модель самостоятельно
