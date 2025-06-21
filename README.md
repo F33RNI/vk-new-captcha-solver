@@ -107,35 +107,37 @@ const captchaBase64 = canvas.toDataURL("image/png");
 
 ```text
 usage: vk-new-captcha-solver [-h] (-t [DATASET_FILES_PATTERN] | -l [MODEL_DIR]) [-s [MODEL_DIR]] [-f IMAGE_FILE_PATH]
-                             [-i [SERVER_IP_PORT]] [-o RESULTS_DIR] [-p KEY=VALUE [KEY=VALUE ...]] [-d] [-v]
+               [-i [SERVER_IP_PORT]] [-o RESULTS_DIR] [-p KEY=VALUE [KEY=VALUE ...]] [-d] [-v]
 
 New (russian) VK captcha solver with built-in server
 
 options:
   -h, --help            show this help message and exit
   -t [DATASET_FILES_PATTERN], --train [DATASET_FILES_PATTERN]
-                        train model with provided files (Default: dataset/*.png). Each file must have captcha's value name
-                        (Example: жхфш.png)
+                        train model with provided files (Default: dataset/*.png). Each file must have captcha's value
+                        name (Example: жхфш.png)
   -l [MODEL_DIR], --load [MODEL_DIR]
                         load model and labels map from directory (Default: model)
   -s [MODEL_DIR], --save [MODEL_DIR]
                         save model and labels map (after training or loading it) into directory (Default: model)
   -f IMAGE_FILE_PATH, --from-file IMAGE_FILE_PATH
                         solve captcha from image file (Example: --from-file="captcha.png")
-  -i [SERVER_IP_PORT], --server [SERVER_IP_PORT]
-                        start server on IP:Port (Default: model) (Example: --server="0.0.0.0:8090") Send POST request with image
-                        as base64 (text/plain) to solve it. Response will also be in text/plain format
+  -i [SERVER_IP:PORT], --server [SERVER_IP:PORT]
+                        start server on IP:Port (Default: 127.0.0.1:8090) (Example: --server="0.0.0.0:8090") Send POST
+                        request with image as base64 (text/plain) to solve it. Response will also be in text/plain
+                        format
   -o RESULTS_DIR, --save-results RESULTS_DIR
                         save solved captchas as images with result as name into directory
   -p KEY=VALUE [KEY=VALUE ...], --params KEY=VALUE [KEY=VALUE ...]
-                        parameters for segmentation and training as key=value pairs (Ex.: -e training_epochs=50) NOTE: All
-                        values are always treated as integers Available keys: training_epochs (Default: 20),
+                        parameters for segmentation and training as key=value pairs (Ex.: -e training_epochs=50) NOTE:
+                        All values are always treated as integers Available keys: training_epochs (Default: 20),
                         no_background_mask_blur_kernel_x (Default: 3), no_background_mask_blur_kernel_y (Default: 3),
                         no_background_mask_threshold (Default: 180), no_background_mask_erode_kernel_x (Default: 3),
-                        no_background_mask_erode_kernel_y (Default: 2), floodfill_threshold (Default: 39), group_threshold
-                        (Default: 2), min_character_width (Default: 34), max_character_width (Default: 110),
-                        min_character_height (Default: 34), max_character_height (Default: 110), min_pixel_density (Default:
-                        12), rects_group_threshold (Default: 2), rects_group_eps (Default: 45)
+                        no_background_mask_erode_kernel_y (Default: 2), floodfill_threshold (Default: 39),
+                        group_threshold (Default: 2), min_character_width (Default: 34), max_character_width (Default:
+                        110), min_character_height (Default: 34), max_character_height (Default: 110),
+                        min_pixel_density (Default: 12), rects_group_threshold (Default: 2), rects_group_eps (Default:
+                        45)
   -d, --debug           show debug images of segmentation
   -v, --version         show program's version number and exit
 
@@ -146,5 +148,6 @@ examples:
   or simply:
   vk-new-captcha-solver -l -o "./solved" -i "localhost:5000"
   vk-new-captcha-solver -l -i
+
 
 ```

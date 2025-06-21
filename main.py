@@ -112,9 +112,9 @@ def parse_args() -> argparse.Namespace:
         const="",
         type=str,
         required=False,
-        help=f'start server on IP:Port (Default: {SAVE_DIR_DEFAULT}) (Example: --server="0.0.0.0:8090")'
+        help=f'start server on IP:Port (Default: {SERVER_IP_PORT_DEFAULT}) (Example: --server="0.0.0.0:8090")'
         " Send POST request with image as base64 (text/plain) to solve it. Response will also be in text/plain format",
-        metavar="SERVER_IP_PORT",
+        metavar="SERVER_IP:PORT",
     )
     parser.add_argument(
         "-o",
@@ -231,6 +231,8 @@ def main() -> None:
         if not args.server:
             args.server = SERVER_IP_PORT_DEFAULT
         ip, port = args.server.split(":")
+        if not port:
+            port = SERVER_IP_PORT_DEFAULT.split(":")[1]
         port = int(port.strip())
         FlaskServer(model_, args.save_results, args.debug, params).run(ip, port)
 
